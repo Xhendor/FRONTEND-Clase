@@ -24,11 +24,13 @@ import {MatBadgeModule} from "@angular/material/badge";
 import {MatMenuModule} from "@angular/material/menu";
 import {MatStepperModule} from "@angular/material/stepper";
 import {MatSliderModule} from '@angular/material/slider';
+import { AgregarProductosComponent } from './agregar-productos/agregar-productos.component';
 
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    AgregarProductosComponent
   ],
   imports: [
     BrowserModule,
