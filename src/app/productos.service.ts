@@ -13,8 +13,9 @@ export class ProductosService {
     return await this.http.get("/productos");
   }
   
-  public async eliminarProducto(idProducto: string) {
-    return await this.http.delete("/producto?id=".concat(idProducto));
+  public async eliminarProducto(idProducto: number) {
+    console.log(idProducto);
+    return await this.http.delete("/producto?id=".concat(idProducto.toString()));
   }
 
   public async agregarProducto(producto:Producto){
@@ -28,7 +29,7 @@ export class ProductosService {
     return await this.http.get("/productos_con_fotos");
   }
 
-  public async obtenerProductosConFotosPorId(idProducto:string){
-    return await this.http.get("/producto?id=".concat(idProducto));
+  public async obtenerProductosConFotosPorId(idProducto:number){
+    return await this.http.get("/producto?id=".concat(idProducto.toString()));
   }
 }
