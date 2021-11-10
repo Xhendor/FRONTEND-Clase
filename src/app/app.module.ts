@@ -25,12 +25,30 @@ import {MatMenuModule} from "@angular/material/menu";
 import {MatStepperModule} from "@angular/material/stepper";
 import {MatSliderModule} from '@angular/material/slider';
 import { AgregarProductosComponent } from './agregar-productos/agregar-productos.component';
+import { ClientesComponent } from './clientes/clientes.component';
+import { DetalleDeProductoComponent } from './detalle-de-producto/detalle-de-producto.component';
+import { DetalleDeVentaComponent } from './detalle-de-venta/detalle-de-venta.component';
+import { LoadingButtonComponent } from './loading-button/loading-button.component';
+import { ProductosComponent } from './productos/productos.component';
+import { TarjetaProductoComponent } from './tarjeta-producto/tarjeta-producto.component';
+import { TiendaComponent } from './tienda/tienda.component';
+import { VentasComponent } from './ventas/ventas.component';
+import { TerminarCompraComponent } from './terminar-compra/terminar-compra.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    AgregarProductosComponent
+    AgregarProductosComponent,
+    ClientesComponent,
+    DetalleDeProductoComponent,
+    DetalleDeVentaComponent,
+    LoadingButtonComponent,
+    ProductosComponent,
+    TarjetaProductoComponent,
+    TiendaComponent,
+    VentasComponent,
+    TerminarCompraComponent
   ],
   imports: [
     BrowserModule,
