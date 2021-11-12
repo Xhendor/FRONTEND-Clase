@@ -1,1 +1,6 @@
-<p>loading-button works!</p>
+<button
+mat-flat-button [disabled]="cargando" color="accent"
+>
+<span *ngIf="!cargando">{{texto}}</span>
+<mat-spinner *ngIf="cargando" diameter="30"></mat-spinner>
+</button>

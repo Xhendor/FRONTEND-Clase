@@ -1,1 +1,38 @@
-<p>agregar-productos works!</p>
+<mat-card>
+
+    <h1>Agregar producto</h1>
+
+    <p>
+        <mat-form-field>
+            <input matInput [(ngModel)]="productModel.nombre" type="text"
+            placeholder="Escriba nombre">
+        </mat-form-field>
+    </p>
+    <p>
+        <mat-form-field>
+            <textarea row="10" matInput [(ngModel)]="productModel.descripcion" 
+            placeholder="Escriba descripcion"></textarea>
+        </mat-form-field>
+    </p>
+    <p>
+        <mat-form-field>
+            <input matInput [(ngModel)]="productModel.precio" type="number"
+            placeholder="Escriba precio">
+        </mat-form-field>
+    </p>
+
+    <label for="fotos">Fotos</label>
+
+    <br>
+    <input accept="image/png,image/jpeg" #foto required id="fotos" multiple type="file">
+
+    <p>
+        <!-- Boton de guardar -->
+        <app-loading-button [cargando]="cargando"
+        texto="Guardar" (click)="guardar()"></app-loading-button>
+        <a routerLink="/productos" mat-raised-button color="primary" style="margin-left: 10px;">
+        Volver
+        </a>
+    </p>
+
+</mat-card>
