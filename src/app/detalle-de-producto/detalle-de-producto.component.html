@@ -1,1 +1,23 @@
-<p>detalle-de-producto works!</p>
+<mat-card>
+    <mat-grid-list cols="2">
+    <mat-grid-tile>
+        <div class="izquierda">
+
+            <img *ngFor="let foto of producto.fotos;let i = index" 
+            (mouseenter)="seleccionarImagen(i)"
+            class="imagen-izquierda"
+            [class.seleccionada]="i==indiceSeleccionado"
+            [src]="resolverFoto(foto.foto)" alt="Foto">
+
+        </div>
+        <div>
+            <img *ngIf="fotoSeleccionada"   [src]="resolverFoto(fotoSeleccionada)"
+            alt="">
+        </div>
+    </mat-grid-tile>
+    <mat-grid-tile class="detalles">
+
+    </mat-grid-tile>
+
+     </mat-grid-list>
+</mat-card>
