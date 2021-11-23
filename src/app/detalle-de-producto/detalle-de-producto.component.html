@@ -16,7 +16,26 @@
         </div>
     </mat-grid-tile>
     <mat-grid-tile class="detalles">
-
+        <h1 class="mat-display-2">{{producto.nombre}}</h1>
+        <p>{{producto.descripcion}}</p>
+        <strong>Precio</strong>
+        <h1 class="mat-display-2">{{producto.precio | currency}}</h1>
+        <mat-chip-list *ngIf="existe">
+            <mat-chip color="warn" selected>
+                <mat-icon>check</mat-icon>
+            En el carrito de compras
+            </mat-chip>
+        </mat-chip-list>
+        <button *ngIf="!existe" (click)="agregarAlCarrito()" class="carrito" 
+        mat-raised-button color="accent">
+            <mat-icon>add</mat-icon>
+            Agregar al carrito
+        </button>
+        <button *ngIf="existe" (click)="borrarDelCarrito()" class="carrito" 
+        mat-raised-button color="accent">
+            <mat-icon>delete</mat-icon>
+            Borrar del carrito
+        </button>
     </mat-grid-tile>
 
      </mat-grid-list>
