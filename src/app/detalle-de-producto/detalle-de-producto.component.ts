@@ -4,6 +4,7 @@ import { ActivatedRoute } from '@angular/router';
 import { Producto } from '../producto';
 import { environment } from 'src/environments/environment';
 import { CarritoService } from '../carrito.service';
+import { DataSharingService } from '../data-sharing.service';
 @Component({
   selector: 'app-detalle-de-producto',
   templateUrl: './detalle-de-producto.component.html',
@@ -22,7 +23,9 @@ export class DetalleDeProductoComponent implements OnInit {
   public indiceSeleccionado=0;
   public existe!:Boolean;
   constructor(private productoService:ProductosService, 
-    private activatedRoute:ActivatedRoute, private carritoService:CarritoService) { }
+    private activatedRoute:ActivatedRoute, 
+    private carritoService:CarritoService,
+    private dataSharingService:DataSharingService) { }
 
   async ngOnInit() {
     const id= this.activatedRoute.snapshot.paramMap.get("id");
@@ -64,6 +67,7 @@ export class DetalleDeProductoComponent implements OnInit {
     console.log(this.producto);
     this.existe=await this.carritoService.existeEnCarrito(id);
     //Envio de mensajes
+    this.dataSharingService.changeMessage("carrito_update");
   }
 
 }
